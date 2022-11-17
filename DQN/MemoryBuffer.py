@@ -23,10 +23,10 @@ class MemoryBuffer(object):
         
         # Convert from _ tuples to _ tensors
         # eg. states tuple to states tensor
-        states = torch.tensor(np.asarray(states), dtype=torch.float32) # shape: 64 [batch_size] x 4 [observations]
-        actions = torch.tensor(actions, dtype=torch.long) # shape: 64 [batch_size] x 1 [action_taken]
-        rewards = torch.tensor(rewards, dtype=torch.float32) # shape: 64 [batch_size] x 1 [reward_received]
-        next_states = torch.tensor(np.asarray(next_states), dtype=torch.float32) # shape: 64 [batch_size] x 4 [new_observations]
-        dones = torch.tensor(dones) # shape: 64 [batch_size] x 1 [is_done]
+        states = torch.tensor(np.asarray(states), dtype=torch.float32)
+        actions = torch.tensor(actions, dtype=torch.long)
+        rewards = torch.tensor(rewards, dtype=torch.float32)
+        next_states = torch.tensor(np.asarray(next_states), dtype=torch.float32)
+        dones = torch.tensor(dones)
         
         return (states, actions, rewards, next_states, dones)
